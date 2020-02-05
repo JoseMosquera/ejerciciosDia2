@@ -1,0 +1,62 @@
+//
+// Simplify using SCSS sintax. Use http://www.sassmeister.com/
+//
+
+$standar: 50px;
+$primary: silver;
+
+@mixin absolute($top, $right, $bottom, $left) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+.menu {
+  @include absolute(0, 0, auto, 0);
+  height: $standar;
+
+  .logged-user {
+    padding: 20px;
+
+    .avatar {
+      display: block;
+      width: $standar * 2;
+
+      i {
+        color: #888;
+        line-height: $standar * 2;
+      }
+    }
+
+    .controls {
+      @include absolute(auto, 0, 0, 0);
+      height: 20px;
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    height: 100%;
+
+    li {
+      position: relative;
+      line-height: $standar;
+
+      &.current {
+        background: $primary;
+      }
+
+      &:first-child {
+        border-top: 1px solid $primary;
+      }
+
+      i {
+        line-height: $standar;
+        font-size: 14pt; 
+      }
+    }
+  }
+}
