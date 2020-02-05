@@ -94,6 +94,7 @@ users.filter(user => user.address)
     .filter(user => user.address.geo.lng >= -100)
     .filter(user => user.address.geo.lng <= 100);
 
+//Misma funcionalidad que lo anterios, pero simplificado a una sola linea
 users.filter(user => user.address && user.address.geo.lat >= -50 && user.address.geo.lat <= 50 && user.address.geo.lng >= -100 && user.address.geo.lng <= 100)
 
 //
