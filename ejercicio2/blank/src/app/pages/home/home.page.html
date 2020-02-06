@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Fruit List
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <div *ngFor="let fruit of fruits; let i = index">
+      <app-fruitcard [fruit]="fruit" (deletedPressed)="deleteFruit(i)"></app-fruitcard>
+      <!-- <app-fruitcard [fruit]="fruit" (deletedPressed)="deleteFruitEvent($event)"></app-fruitcard> -->
+    </div>
+    <!-- <ion-card class="ion-padding" *ngFor="let fruit of fruits; let i = index">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="2">
+            <img [src]="'/assets/images/fruits/' + fruit.image">
+          </ion-col>
+
+          <ion-col size="8">
+            <ion-label>{{ fullName(fruit) }}</ion-label>
+            <h1>{{ fruit.name }}</h1>
+            <p>{{ fruit.description }}</p>
+          </ion-col>
+
+          <ion-col size="2">
+            <ion-button color="danger" (click)="deleteFruit(i)"><ion-icon color="light" name="trash"></ion-icon></ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card> -->
+  </div>
+
+  <div class="ion-padding">
+    <ion-button color="secondary" (click)="toggleComponentF()">Mostrar componente</ion-button>
+    <app-sandbox *ngIf="toggleComponent"></app-sandbox>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row justify-content-around>
+        <ion-col>
+          <ion-button color="secondary" [disabled]="recoverDisabled" (click)="recoverFruits()">RESTORE</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>
