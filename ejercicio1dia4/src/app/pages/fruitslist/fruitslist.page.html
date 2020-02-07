@@ -1,0 +1,12 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Fruits List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-expanable-content [fruit]="fruit" *ngFor="let fruit of fruits"></app-expanable-content>
+</ion-content>

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>sanbox</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div>
+    <h1>Expanable contents</h1>
+  
+    <app-expanable-content title="Title1" (toggleContent)="explanableContentChange($event)">
+      Content1
+    </app-expanable-content>
+    <app-expanable-content title="Title2" (toggleContent)="explanableContentChange($event)">
+      Content2
+    </app-expanable-content>
+    <app-expanable-content title="Title3" (toggleContent)="explanableContentChange($event)">
+      Content3
+    </app-expanable-content>
+    <app-expanable-content title="Title4" (toggleContent)="explanableContentChange($event)">
+      Content4
+    </app-expanable-content>
+    <p>Number of expanded. {{ numberExpanded }}</p>
+  </div>
+
+  <div>
+    <h1>Ratings</h1>
+    <app-rating (likesSum)="likesSum($event)" (dislikesSum)="dislikesSum($event)"></app-rating>
+    <app-rating likesParam="1"  (likesSum)="likesSum($event)" (dislikesSum)="dislikesSum($event)"></app-rating>
+    <app-rating dislikesParam="2" (likesSum)="likesSum($event)" (dislikesSum)="dislikesSum($event)"></app-rating>
+    <app-rating likesParam="3" dislikesParam="1" (likesSum)="likesSum($event)" (dislikesSum)="dislikesSum($event)"></app-rating>
+    <p>Up votes sum: {{ likes }}</p>
+    <p>Down votes sum: {{ dislikes }}</p>
+  </div>
+</ion-content>
