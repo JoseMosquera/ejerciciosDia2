@@ -35,7 +35,7 @@ export class HomePage {
     this.toggleComponent = !this.toggleComponent
   }
 
-  deleteFruitEvent(num: number) {
+  /**deleteFruitEvent(num: number) {
     console.log(num)
-  }
+  }*/
 }
