@@ -1,0 +1,16 @@
+Ejercicio 1.
+============
+
+En general bastante bien. Posibles mejoras:
+
+- Utilizar un array temporal que muestra las frutas, donde realizaremos las operaciones y mantener un original.
+  De esta forma evitaremos constantes llamadas a un posible servidor que nos proporciona los datos.
+
+- La maquetación del footer es mejorable. No es necesario el ion-grid.
+
+Ejercicio 2.
+============
+
+Bastante bien. Debido a que no sabías crear pantallas nuevas, has optado por crear un nuevo componente.
+
+- El ion-icon del expandable puede cambiar el icono directamente en el @input name: [name]="toggle ? 'remove' : 'add'"
