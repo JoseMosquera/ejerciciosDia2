@@ -1,0 +1,18 @@
+Ejercicio 1:
+============
+
+Muy bien utilizado el ng-content. Era el objetivo principal de este ejercicio.
+Y tambien muy bien usado los @Inputs y @Outputs
+
+Ejercicio 2:
+============
+
+Muy bien utilizado el componente reutilizable y sus parámetros.
+
+Ejercicio 3:
+============
+
+No se ha utilizado la potencia de ng-content. En vez de pasar por parámetros la fruta,
+pintar dentro del <app-expandable-content> el <app-fruit-card> directamente.
+
+Muy bien ejecutada la navegación entre pantallas
