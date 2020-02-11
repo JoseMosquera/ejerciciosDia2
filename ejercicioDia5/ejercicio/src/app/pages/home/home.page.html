@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <app-app-loading-feedback [state]="state" (retryEvent)="loadAgain()">
+      <form [formGroup]="myForm" (submit)="submitForm(submitButton)">
+        <ion-item>
+          <ion-label>Name</ion-label>
+          <ion-input formControlName="name">{{ user?.name }}</ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Birthdate</ion-label>
+          <ion-datetime formControlName="birthDate"></ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-label>Sex</ion-label>
+          <ion-select formControlName="sex">
+            <ion-select-option value="male">Male</ion-select-option>
+            <ion-select-option value="female">Female</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>Phone</ion-label>
+          <ion-input type="number" formControlName="phone"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Email</ion-label>
+          <ion-input formControlName="email" type="email"></ion-input>
+        </ion-item>
+        <div margin text-right>
+          <ion-button #submitButton [disabled]="!myForm.valid" type="submit">Submit</ion-button>
+        </div>
+      </form>
+    </app-app-loading-feedback>
+  </div>
+</ion-content>
