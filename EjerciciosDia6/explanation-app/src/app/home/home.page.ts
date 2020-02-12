@@ -32,7 +32,7 @@ export class HomePage implements OnInit {
   }
 
   public ngOnInit(): void {
-    this.message = this.getMessage(3)
+    this.message = this.getMessage(4)
     this.statusNotice = this.translate.instant('statusNotice', {
       status: this.translate.instant('serviceStatus')[this.serviceStatus]
     });
