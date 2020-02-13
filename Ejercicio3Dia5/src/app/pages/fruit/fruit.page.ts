@@ -1,10 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ReplaySubject, Subject, Subscription } from 'rxjs';
+
 import { ActivatedRoute } from '@angular/router';
 import { Fruit } from '../../models/fruit.model';
 import { FruitsService } from '../../services/fruits.service';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
-import { Subscription, Subject, ReplaySubject } from 'rxjs';
 
 @Component({
   selector: 'app-fruit',
@@ -59,6 +60,7 @@ export class FruitPage implements OnInit {
     )
   }
 
+  // Hubiese estado bien añadir la funcionalidad de app-loading-feedback en la actualización
   submitForm() {
     let fruit = { ...this.fruit, description: this.myForm.value.description }
     this.fruitService.updateFruit(fruit).subscribe(res => {
@@ -68,9 +70,12 @@ export class FruitPage implements OnInit {
     )
   }
 
+  // Falta implementar la interface en la clase
   ngOnDestroy() {
     this.susbcription.unsubscribe()
     this.fruitService.getFruits().subscribe()
     this.mySubject.subscribe(value => console.log(value))
   }
 }
+
+// Ojo con los errores de lintado
