@@ -1,11 +1,12 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+import { AlertController } from '@ionic/angular';
+import { HttpErrorResponse } from '@angular/common/http';
+import { Subject } from 'rxjs';
 import { User } from '../../models/user.model';
 import { UsersService } from '../../services/users.service';
-import { HttpErrorResponse } from '@angular/common/http';
-import { AlertController } from '@ionic/angular';
-import { takeUntil } from "rxjs/operators";
-import { Subject } from 'rxjs';
+import { takeUntil } from "rxjs/operators"; // Usar comillas simples
 
 @Component({
   selector: 'app-home',
@@ -86,14 +87,19 @@ export class HomePage implements OnInit{
       },
         err => {
           console.log(err)
-          submitButton.disabled = false
+          submitButton.disabled = false;
         }
       )
     }
   }
 
+  // Falta la interfaz
   ngOnDestroy() {
     this.unsubscribe$.next()
     this.unsubscribe$.complete()
   }
 }
+
+// Bien pero ojo con los errores que muestra el linter. Falta coherencia en los estilos (comillas simples, punto y comas, etc)
+// El alert con el mensaje de confirmación debería ser un toast
+// Falta el toast cuando la petición da error

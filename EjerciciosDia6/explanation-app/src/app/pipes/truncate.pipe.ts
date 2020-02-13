@@ -9,7 +9,7 @@ import { Injectable, Pipe, PipeTransform } from '@angular/core';
 export class TruncatePipe implements PipeTransform {
 
   transform(value: string, n: number, type? : string): string {
-    
+    // Usar mejor la identidad ===
     if (type == 'words') {
       let array = value.split(' ')
       let nextSpace = value.indexOf(array[n-1]) + array[n-1].length
@@ -24,3 +24,5 @@ export class TruncatePipe implements PipeTransform {
     }
   }
 }
+
+// En general bien pero ojo con los errores del tslint
