@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Books list</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <app-app-loading-feedback [state]="state" (retryEvent)="loadAgain()">
+    <app-book-card>
+        <ion-card class="ion-padding" *ngFor="let book of books" [routerLink]="['/book', book.id]">
+          <ion-card-title>
+            {{ book?.title }}
+          </ion-card-title>
+          <ion-card-content>
+            {{ book?.language }}
+          </ion-card-content>
+        </ion-card>
+    </app-book-card>
+  </app-app-loading-feedback>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">  
+    <ion-fab-button color="success" routerLink="/book">  
+      <ion-icon name="add"></ion-icon>  
+    </ion-fab-button>  
+  </ion-fab>  
+</ion-content>

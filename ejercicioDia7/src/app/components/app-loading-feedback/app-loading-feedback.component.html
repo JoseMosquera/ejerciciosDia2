@@ -1,0 +1,11 @@
+<ng-content *ngIf="state=='loaded'"></ng-content>
+
+<div *ngIf="state=='loading'" class="ion-text-center ion-padding">
+  <ion-spinner name="circles"></ion-spinner>
+  <h1>Cargarndo...</h1>
+</div>
+
+<div *ngIf="state=='error'" class="ion-text-center">
+  <h1>Ha habido un error durante la carge</h1>
+  <ion-button color="primary" size="large" (click)="retry()"><ion-icon name="refresh"></ion-icon></ion-button>
+</div>
