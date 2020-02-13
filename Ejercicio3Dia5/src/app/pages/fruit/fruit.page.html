@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/fruitslist"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ fruit?.name }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <app-app-loading-feedback [state]="state" (retryEvent)="loadAgain()">
+    <img [src]="'/assets/images/fruits/' + fruit?.image">
+    <form [formGroup]="myForm" (submit)="submitForm()">
+      <ion-item>
+        <ion-textarea formControlName="description"></ion-textarea>
+      </ion-item>
+  
+      <ion-item class="ion-text-center">
+        <ion-button type="submit" [disabled]="!myForm.valid" color="primary">UPDATE</ion-button>
+      </ion-item>
+      </form>
+    </app-app-loading-feedback>
+</ion-content>
+  

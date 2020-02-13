@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Pipes usage
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <h1>Common build-in pipes</h1>
+
+  <p>
+    <span>{{ 'Some Text' | uppercase }}</span>
+  </p>
+
+  <p>
+    <span>{{ 'Some Text' | lowercase }}</span>
+  </p>
+
+  <p>
+    <span>{{ currentDate | date }}</span>
+  </p>
+
+  <p>
+    <span>{{ currentDate | date:'dd/MM/yyyy' }}</span>
+  </p>
+
+  <p>
+    <span>{{ 12.3456789 | number: '1.0-2' }}</span>
+  </p>
+
+  <p>
+    <span>{{ 12 | number: '1.2-2' }}</span>
+  </p>
+
+  <p>
+    <span>{{ 1 | number: '3.0-3' }}</span>
+  </p>
+
+  <h1>Custom pipes</h1>
+
+  <p>
+    <span>{{ 'El veloz murcielago hindu comia feliz cardillo y kiwi' | truncate:5:'words' }}</span>
+  </p>
+
+  <p>{{ message }}</p>
+
+  <p>
+    <ion-button (click)="presentAlert()">Present alert</ion-button>
+  </p>
+
+  <h1>Internacionalization</h1>
+
+  <p>
+    <span>{{ 'hello' | translate }}</span>
+  </p>
+
+  <p>
+    <span translate="hello"></span>
+  </p>
+
+  <p>
+    <span translate>hello</span>
+  </p>
+
+  <p>
+    <span>{{ 'helloName' | translate : { name: 'world'} }}</span>
+  </p>
+
+  <p>
+    <span translate="helloName" [translateParams]="{ name: 'world'}"></span>
+  </p>
+
+  <p>
+    <span translate [translateParams]="{ name: 'world'}">helloName</span>
+  </p>
+
+  <p>
+    <ion-button (click)="presentSayHelloToast()">
+      <span translate>sayHello</span>
+    </ion-button>
+  </p>
+
+  <p>
+    <ion-button (click)="presentSayHelloNameToast()">
+      <span translate>sayHelloName</span>
+    </ion-button>
+  </p>
+
+  <p>
+    <!-- This can not be done this way: -->
+    <!-- <span translate [translateParams]="{ status: '{{ serviceStatus | translate }}' }">statusNotice</span> -->
+
+    <span>{{ statusNotice }}</span>
+  </p>
+
+</ion-content>

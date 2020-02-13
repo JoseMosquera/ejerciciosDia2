@@ -1,0 +1,33 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>
+      <ion-button color="primary" (click)="toggleCard()">
+        <ion-icon name="remove" *ngIf="toggle; else Untoggle"></ion-icon>
+        <ng-template #Untoggle>
+          <ion-icon name="add"></ion-icon>
+        </ng-template>
+      </ion-button>
+      {{ title }}
+      {{ fruit?.name }}
+    </ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content *ngIf="toggle">
+    <ng-content></ng-content>
+    <ion-grid *ngIf="fruit">
+      <ion-row>
+        <ion-col size="2">
+          <img [src]="'/assets/images/fruits/' + fruit.image">
+        </ion-col>
+
+        <ion-col size="8">
+          <p>{{ fruit.description }}</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-button color="primary" [routerLink]="['/fruit', fruit.id]">VIEW DETAILS</ion-button>
+      </ion-row>
+    </ion-grid>
+  </ion-card-content>
+</ion-card>

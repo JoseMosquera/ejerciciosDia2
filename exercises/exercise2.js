@@ -35,6 +35,7 @@ class Persona {
   }
 
   greet(){
+    // Bien. Como apunte no es necesario escapar con la barra invertida la ' si se escribe entre ``
     console.log(`Hi, my name is ${this.name} and I\'m ${this.age} years old.`)
   }
 }
@@ -135,7 +136,7 @@ var object1 = {
 var object1 = {
   prop1: 'value1',
   prop2,
-  function1: function(param) {
+  function1: function(param) { // Mejor usar funcion flecha
 
     if(typeof param == 'undefined') {
         param = 1;
@@ -229,3 +230,10 @@ for (const key in objKeys) {
     console.log(`${key}: ${objKeys[key]}`)
   }
 }
+
+// Al utilizar for in no neceistamos el hasOwnProperty ni objKeys
+// for (const key in object3) {
+//  console.log(`${key}: ${object3[key]}`) 
+// }
+
+// En general muy bien. Sigue así.

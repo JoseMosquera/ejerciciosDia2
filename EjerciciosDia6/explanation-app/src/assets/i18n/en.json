@@ -1,0 +1,11 @@
+{
+  "hello": "Hello",
+  "helloName": "Hello {{ name }}",
+  "sayHello": "Say hello",
+  "sayHelloName": "Say hello name",
+  "statusNotice": "The service is {{ status }}",
+  "serviceStatus": {
+    "active": "active",
+    "inactive": "inactive"
+  }
+}
