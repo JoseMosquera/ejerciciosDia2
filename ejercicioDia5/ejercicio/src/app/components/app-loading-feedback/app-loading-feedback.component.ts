@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-app-loading-feedback',
@@ -7,7 +7,7 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 })
 export class AppLoadingFeedbackComponent implements OnInit {
 
-  @Input() state: string
+  @Input() state: string // Lo ideal sería crear un enum con los tres estados en modelos y asignarlo como tipo en lugar de string
   @Output() readonly retryEvent = new EventEmitter<string>()
 
   constructor() { }
